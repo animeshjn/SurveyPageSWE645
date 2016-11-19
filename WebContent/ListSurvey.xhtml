@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Animesh Jain MS CS Fall'16 G01043755 ajain13@masonlive.gmu.edu-->
+<!-- Page to list all Surveys -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+<link rel="stylesheet" type="text/css" href="styles//surveystyle.css"></link>
+</h:head>
+
+<h:body>
+<div id="listsurvey">
+<p>All Previous Surveys</p>
+<ul>
+<li>	|<a href="assignment4home.xhtml">Home</a> |
+	|<a href="Search.xhtml">Search All Surveys </a> |
+	|<a href="ListSurvey.xhtml">List All Surveys </a>|	</li>
+</ul>
+<h:dataTable value="#{surveyBean.sArrayFetch}" var="stud" border="1">
+		<h:column>
+			<f:facet name="header"> First name</f:facet>
+			 "#{stud.firstname}"
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header"> Last name</f:facet>
+			#{stud.lastname}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header"> Street Address</f:facet>
+			#{stud.streetaddress}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header"> City</f:facet>
+			#{stud.city}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header"> State</f:facet>
+			#{stud.state}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header"> Zipcode</f:facet>
+			#{stud.zip}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header"> Tel No</f:facet>
+			#{stud.telephone}
+		</h:column>
+		
+	
+		<h:column>
+			<f:facet name="header"> Email id</f:facet>
+			#{stud.mail}
+		</h:column>
+		
+				
+		<h:column>
+			<f:facet name="header"> Date Of survey</f:facet>
+			#{stud.date}
+		</h:column>
+		
+		
+		<h:column>
+			<f:facet name="header"> Source of Information</f:facet>
+			#{stud.interest}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header"> Raffles</f:facet>
+		#{stud.raffle}
+		</h:column>
+		<h:column>
+		<f:facet name="header"> Mean</f:facet>
+		#{stud.mean}
+		</h:column>
+		<h:column>
+		<f:facet name="header"> Deviation</f:facet>
+		#{stud.diviation}
+		</h:column>
+		<h:column>
+		<f:facet name="header"> What-Liked</f:facet>
+		<h:dataTable value="#{stud.liked}" var="liked" border="1">
+		   <h:column>#{liked}</h:column>
+		</h:dataTable>
+		</h:column>
+		
+		
+		
+						</h:dataTable>
+		
+
+</div>
+</h:body>
+</html>

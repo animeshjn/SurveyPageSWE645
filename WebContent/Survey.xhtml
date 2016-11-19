@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- Animesh Jain MS CS Fall'16 G01043755 ajain13@masonlive.gmu.edu-->
+<!-- Page of Survey.xhtml for displaying main form and sending data after validation-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="styles//surveystyle.css"></link>
+</h:head>
+
+<h:body>
+	
+			|<a href="assignment4home.xhtml">Home</a> |
+	|<a href="Search.xhtml">Search All Surveys </a> |
+	|<a href="ListSurvey.xhtml">List All Surveys </a>|
+	
+	
+	<div id="surveyform">
+		<h:form action="#{surveyBean.save}">
+			<p:panelGrid columns="1" />
+			<p:outputLabel>First Name</p:outputLabel>
+			<p:inputText id="firstnameinput" required="true"
+				value="#{surveyBean.student.firstname}"
+				requiredMessage="Please enter your firstname"
+				validatorMessage="Enter only alphabetical text" >
+				<f:validateLength maximum="15" />
+				<f:validateRegex pattern="^[a-z A-Z]+$" />
+			</p:inputText>
+			<p:message for="firstnameinput" class="error" />
+			<p:outputLabel>Last Name</p:outputLabel>
+			<p:inputText id="lastnameinput" required="true"
+				value="#{surveyBean.student.lastname}"
+				requiredMessage="Please enter your Lastname"
+				validatorMessage="Enter only alphabetical text">
+				<f:validateLength maximum="15" />
+				<f:validateRegex pattern="^[a-z A-Z]+$" />
+			</p:inputText>
+
+			<p:message for="lastnameinput" class="error" />
+			<p:outputLabel>Street Address</p:outputLabel>
+			<p:inputText id="streetaddress" required="true"
+				value="#{surveyBean.student.streetaddress}"
+				requiredMessage="Please enter your Street address"
+				validatorMessage="Enter only alphabetical text">
+				<f:validateLength maximum="30" />
+				<f:validateRegex pattern="^[a-z A-Z0-9\\\-]+$" />
+			</p:inputText>
+			<p:message for="streetaddress" class="error" />
+			<p:outputLabel>City</p:outputLabel>
+			<p:inputText id="city" required="true"
+				value="#{surveyBean.student.city}"
+				requiredMessage="Please enter your city"
+				validatorMessage="Enter only alphabetical text">
+				<f:validateRegex pattern="^[a-z A-Z]+$" />
+			</p:inputText>
+			<p:message for="city" class="error" />
+			<p:outputLabel>State</p:outputLabel>
+			<p:inputText id="state" required="true"
+				value="#{surveyBean.student.state}"
+				requiredMessage="Please enter your state"
+				validatorMessage="Enter only alphabetical text">
+				<f:validateRegex pattern="^[a-z A-Z]+$" />
+			</p:inputText>
+			<p:message for="state" class="error" />
+			<p:outputLabel>Zip</p:outputLabel>
+			<p:inputText id="zip" required="true"
+				value="#{surveyBean.student.zip}"
+				requiredMessage="Please enter your Zip"
+				validatorMessage="Enter only 5 digits">
+				<f:validateLength minimum="5" maximum="5" />
+				<f:ajax listener="#{surveyBean.renderAll}" execute="#{zip}"
+					event="keyup" render="city state" />
+			</p:inputText>
+
+			<p:message for="zip" class="error" />
+			<p:outputLabel>Telephone Number</p:outputLabel>
+			<p:inputMask id="telephonenumber" required="true"
+				value="#{surveyBean.student.telephone}" mask="(999) 999-9999"
+				requiredMessage="Please enter your Telephone"
+				validatorMessage="Enter phone in format (123)-123-1234">
+			</p:inputMask>
+			<p:message for="telephonenumber" class="error" />
+
+			<p:outputLabel>e mail</p:outputLabel>
+			<p:inputText id="email" required="true"
+				value="#{surveyBean.student.mail}"
+				requiredMessage="Please enter your E-mail"
+				validatorMessage="please enter email in form someone@example.com">
+				<f:validateRegex
+					pattern="^[_a-zA-z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[\.a-zA-z]+[\.a-zA-z]*" />
+
+			</p:inputText>
+			<p:message for="email" class="error" />
+			<p:outputLabel>Date of Survey</p:outputLabel>
+
+			<p:calendar id="date" required="true" name="date"
+				binding="#{date1input}" value="#{surveyBean.student.date}"
+				requiredMessage="Please enter Date"
+				validatorMessage="Please enter date of the form mm/dd/yyyy">
+
+
+			</p:calendar>
+			<p:message for="date" class="error" />
+
+			<p>Provide a possible start date of the semester</p>
+			<p:calendar id="semester" required="true"
+				requiredMessage="Please enter Date" popupIconOnly="true"
+				validator="#{surveyBean.validateSemesterStartDate}"
+				value="#{surveyBean.student.semesterDate}">
+				
+				<f:attribute name="dateOfSurvey" value="#{date1input}"></f:attribute>
+
+			</p:calendar>
+			<p:message for="semester" class="error" />
+			<p>What you liked most about the campus?</p>
+
+
+			<p:selectManyCheckbox id="liked" value="#{surveyBean.student.liked}">
+				<f:selectItem itemValue="student" itemLabel="Student" />
+				<f:selectItem itemValue="location" itemLabel="Location" />
+				<f:selectItem itemValue="campus" itemLabel="Campus" />
+				<f:selectItem itemValue="atmosphere" itemLabel="Atmosphere" />
+			</p:selectManyCheckbox>
+
+
+			<p>How you became interested in University?</p>
+			<p:selectOneRadio id="interest"
+				value="#{surveyBean.student.interest}">
+				<f:selectItem itemValue="friends" itemLabel="Friends" />
+				<f:selectItem itemValue="television" itemLabel="Television" />
+				<f:selectItem itemValue="internet" itemLabel="Internet" />
+				<f:selectItem itemValue="others" itemLabel="Others" />
+
+			</p:selectOneRadio>
+
+			<p>How likely would you recommend this school to other
+				prospective students?</p>
+			<p:autoComplete forceselection="true"
+				value="#{surveyBean.student.recommend}"
+				completeMethod="#{surveyBean.completeReco}" required="true"
+				requiredMessage="Select atleast one recommendation">
+			</p:autoComplete>
+
+			<p>Want to win a free movie ticket? Then enter at least ten comma
+				separated numbers ranging from 1 through 100 in Raffle :</p>
+			<p:inputText id="raffle" value="#{surveyBean.student.raffle}"
+				required="true"
+				validatorMessage=" please enter 10 comma seperated numbers">
+				<f:validateRegex pattern="^[0-9\,]+$" />
+			</p:inputText>
+
+
+			<p>Additional Comments:</p>
+			<p:inputTextarea id="comments" draggable="false"
+				value="#{surveyBean.student.comments}">
+			</p:inputTextarea>
+
+			<h:commandButton value="Submit" type="submit"
+				action="#{surveyBean.save}" ajax="false" />
+			<p:button value="Cancel" />
+
+
+		</h:form>
+	</div>
+</h:body>
+</html>

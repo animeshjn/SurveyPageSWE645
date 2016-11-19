@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- Animesh Jain MS CS Fall'16 G01043755 ajain13@masonlive.gmu.edu-->
+<!-- Page of Survey.xhtml for displaying main form and sending data after validation-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="styles//surveystyle.css"></link>
+</h:head>
+
+<h:body>
+	<div id="surveyform">
+		<ul>
+			<li><a href="assignment4home.xhtml">Home</a></li>
+			<li><a href="Search.xhtml">Search All Surveys </a></li>
+			<li><a href="ListSurvey.xhtml">List All Surveys </a></li>
+		</ul>
+
+
+		<h:form>
+			<p:panelGrid columns="2" />
+			<p:outputLabel>First Name</p:outputLabel>
+			<p:inputText id="firstnameinput" value="#{searchBean.firstname}"
+				requiredMessage="Please enter your firstname"
+				validatorMessage="Enter only alphabetical text">
+				<f:validateLength maximum="15" />
+
+			</p:inputText>
+			<p:message for="firstnameinput" class="error" />
+			<p:outputLabel>Last Name</p:outputLabel>
+			<p:inputText id="lastnameinput" value="#{searchBean.lastname}"
+				requiredMessage="Please enter your Lastname"
+				validatorMessage="Enter only alphabetical text">
+
+			</p:inputText>
+
+			<p:message for="lastnameinput" class="error" />
+			<p:outputLabel>City</p:outputLabel>
+			<p:inputText id="city" value="#{searchBean.city}"
+				requiredMessage="Please enter your city"
+				validatorMessage="Enter only alphabetical text">
+
+			</p:inputText>
+			<p:message for="city" class="error" />
+			<p:outputLabel>State</p:outputLabel>
+			<p:inputText id="state" value="#{searchBean.state}"
+				requiredMessage="Please enter your state"
+				validatorMessage="Enter only alphabetical text">
+
+			</p:inputText>
+			<p:message for="state" class="error" />
+
+			<h:commandButton value="Search" type="submit"
+				action="#{searchBean.searchSurvey}" />
+			<p:button value="Cancel" />
+
+
+		</h:form>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,247 @@
+@CHARSET "UTF-8";
+/*Animesh Jain MS CS Fall'16 G01043755 ajain13@masonlive.gmu.edu
+css file for survey homepage*/
+
+
+	table{
+	border-spacing: 10px 20px;
+	
+	}
+tr::focus{
+background-color: black;
+color:white;
+}
+	
+input[type],input:not([type=button]):not([type=reset]):not([type=submit]){
+  padding: 10px;
+  border: none;
+  font-size:medium;
+  display: inline-block;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border-bottom 0.6s ease;
+}
+input[type=button], input[type=submit]{
+padding: 10px;
+  border: none;
+  
+}
+input[type=button]:hover, input[type=submit]:hover{
+padding: 10px;
+background-color:gray;
+  border: none;
+  
+}
+
+select{
+ border: 1px solid ;
+ color:White;
+ background-color:#09c;	 
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
+   }
+
+
+textarea:focus,input:not([type=button]):not([type=reset]):not([type=submit]):focus{
+  border:solid 1px blue;
+   
+  border-bottom: solid 4px blue;
+  opacity:1;
+  background-color: white;
+}
+input[type=reset]:focus{
+
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+	#wrapper{
+
+	
+}
+#heading{
+
+text-align: center;
+font-weight: bolder;
+color:Black;
+z-index:1;
+font-size:2em;
+background-repeat: no-repeat;
+background-position: left;
+
+
+}
+#logo{
+z-index: 50;
+width:10%;
+position: fixed;
+top:0;
+left:2%;
+text-align: left;
+color:Black;
+z-index:1;
+font-size:1.2em;
+font-weight: bolder;
+text-align: center;
+font-style: italic;
+}
+body
+{
+
+	
+}
+#surveyform
+{
+
+//background-image: url("spiralplain.png");
+
+background-repeat:no-repeat;
+	
+opacity:0.8;
+margin-left:auto;
+margin-right:auto;
+margin-top:1.8%;
+//width:90%;
+color:white;
+
+
+
+background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  margin: auto;
+  position: relative;
+  width: 750px;
+  height: auto;
+ font-family: Tahoma, Geneva, sans-serif;
+  
+  font-size: larger;
+  
+  line-height: 20px;
+  
+  color: #09C;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 30px;
+  border: 1px solid #999;
+  border: inset 1px solid #333;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
+
+
+}
+#formtitle
+{
+	font-size:medium;
+	font-family:sans-serif;
+	font-weight:bolder;
+	
+text-align:center;
+text-decoration: blink;
+text-transform: capitalize;
+color:black;
+}
+.button {
+    background-color: black;
+    //border: none;
+    color: white;
+    //padding: 15px 32px;
+    text-align: center;
+    //text-decoration: none;
+    //display: inline-block;
+    font-size: 16px;
+}
+
+#formtable{
+color:black;
+	table-layout: auto;
+border-spacing: 2px;
+margin-top: 12pt;    
+
+}
+
+
+.label{
+text-align: right;
+}
+.input{
+padding-left:8pt;}
+.question
+{
+text-align:Left;
+
+font-style: italic;
+font-family: sans-serif;
+
+
+
+}
+.radio{
+text-align:center;
+
+}
+
+.error{
+	margin-top:5em;
+font-size:inherit;
+color: red;
+text-decoration: none;
+text-align: center;
+}
+#thank{
+font-size: larger;
+font-weight: bolder;
+}
+
+
+
+#listsurvey{
+
+//background-image: url("spiralplain.png");
+
+background-repeat:no-repeat;
+	
+opacity:0.8;
+margin-left:auto;
+margin-right:auto;
+margin-top:1.8%;
+
+color:white;
+
+
+
+background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE );
+  background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE );
+  background: linear-gradient(bottom, #CCCCCC, #EEEEEE );
+  margin: auto;
+//  position: relative;
+  height: auto;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: larger;
+  line-height: 20px;
+  color: #09C;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid #999;
+  border: inset 1px solid #333;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+
+
+

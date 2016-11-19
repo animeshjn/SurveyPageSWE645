@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Animesh Jain MS CS Fall'16 G01043755 ajain13@masonlive.gmu.edu-->
+<!-- Page of winningResult for the Winning student -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+<link rel="stylesheet" type="text/css" href="styles//surveystyle.css"></link>
+</h:head>
+
+<h:body>
+<div id="surveyform">
+<p>Thank you! Your Feedback has been recorded!</p>
+<p style="color:Red"> Congratulations! you are the winner of Two Movie Tickets</p>
+<h:panelGrid columns="2">
+<h:outputText value="Student Name:"></h:outputText><h:outputText value="#{surveyBean.student.firstname}"></h:outputText>
+<h:outputText value="mean">Mean:</h:outputText><h:outputText value="#{surveyBean.ws.mean}"></h:outputText>
+<h:outputText value="Standard Deviation"></h:outputText><h:outputText value="#{surveyBean.ws.standardDeviation}"></h:outputText>
+</h:panelGrid>
+
+<ul>
+			<li><a href="assignment4home.xhtml">Home</a></li>
+			<li><a href="Search.xhtml">Search All Surveys </a></li>
+			<li><a href="ListSurvey.xhtml">List All Surveys </a></li>
+		</ul>
+		</div>
+</h:body>
+</html>
